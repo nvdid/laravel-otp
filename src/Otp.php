@@ -40,7 +40,7 @@ class Otp
         return (object)[
             'status' => true,
             'token' => $token,
-            'message' => 'OTP generated'
+            'message' => 'کد ایجاد گردید'
         ];
     }
 
@@ -63,7 +63,7 @@ class Otp
                 if (strtotime($validity) < strtotime($now)) {
                     return (object)[
                         'status' => false,
-                        'message' => 'OTP Expired'
+                        'message' => 'عدم اعتبار کد'
                     ];
                 }
 
@@ -71,7 +71,7 @@ class Otp
 
                 return (object)[
                     'status' => true,
-                    'message' => 'OTP is valid'
+                    'message' => 'کد تایید شد'
                 ];
             }
 
@@ -79,12 +79,12 @@ class Otp
 
             return (object)[
                 'status' => false,
-                'message' => 'OTP is not valid'
+                'message' => 'عدم تایید کد'
             ];
         } else {
             return (object)[
                 'status' => false,
-                'message' => 'OTP does not exist'
+                'message' => 'عدم وجود کد'
             ];
         }
     }
